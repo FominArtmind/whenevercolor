@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
     ProfileComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductListComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
