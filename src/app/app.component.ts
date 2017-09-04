@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <h1>
       Welcome to {{title}}!!
     </h1>
+    <ui-view></ui-view>
   `,
   styles: []
 })
