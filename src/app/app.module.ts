@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UIRouterModule } from '@uirouter/angular';
 import { MAIN_STATES, uiRouterConfigFn } from './app.states';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { reducers } from './store/reducers/index';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -17,6 +18,10 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductComponent } from './products/product/product.component';
 
 import { ProductsService } from './services/products.service';
+import { CartProductListComponent } from './cart/cart-product-list/cart-product-list.component';
+import { CartProductComponent } from './cart/cart-product/cart-product.component';
+import { ProfileOrderListComponent } from './profile/profile-order-list/profile-order-list.component';
+import { ProfileOrderComponent } from './profile/profile-order/profile-order.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,11 @@ import { ProductsService } from './services/products.service';
     ProfileComponent,
     ProductsComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    CartProductListComponent,
+    CartProductComponent,
+    ProfileOrderListComponent,
+    ProfileOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +45,8 @@ import { ProductsService } from './services/products.service';
       useHash: true,
       config: uiRouterConfigFn
     }),
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(reducers),
     // StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([ProductsEffects]),

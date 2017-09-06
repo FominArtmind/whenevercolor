@@ -24,9 +24,7 @@ import * as reducers from '../../store/reducers';
 export class ProductListComponent implements OnInit, OnDestroy {
   private alive = true;
 
-  // constructor(private store: Store<fromRoot.State>) {
   constructor(private store: Store<reducers.State>) {
-    // this.anyPinned$ = this.getPinned().takeWhile(() => this.alive).map((cards) => cards.length > 0);
   }
 
   ngOnInit() {
@@ -38,7 +36,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   getProducts() {
-    // return this.productsService.load();
     return this.store.select(reducers.getProducts)
       .takeWhile(() => this.alive);
   }
